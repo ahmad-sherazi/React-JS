@@ -1,0 +1,71 @@
+import React from 'react'
+import { useEffect,useState } from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Home from './pages/home'
+import Contact from './pages/Contact'
+import About from './pages/About'
+import Cart from './pages/Cart'
+import Navbar from './components/navbar'
+import Product from './pages/Product'
+import SingleProduct from './pages/SingleProduct'
+import Footer from './components/Footer'
+import axios from 'axios'
+
+
+
+
+import './App.css'
+
+function App() {
+   const [location, setLocation] = useState()
+  const [openDropdown, setOpenDropdown] = useState(false)
+  //const { cartItem, setCartItem } = useCart()
+
+  const getLocation = async () => {
+    navigator.geolocation.getCurrentPosition(async pos => {
+      const { latitude, longitude } = pos.coords
+      // console.log(latitude, longitude);
+
+      const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+      try {
+        const location = await axios.get(url)
+        const exactLocation = location.data.address
+        setLocation(exactLocation)
+        setOpenDropdown(false)
+        // console.log(exactLocation);
+
+      } catch (error) {
+        console.log(error);
+
+      }
+
+    })
+  }
+
+  useEffect(() => {
+    getLocation()
+  }, [])
+  
+  return (
+    <BrowserRouter>
+    <Navbar location={location} getLocation={getLocation} openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}/>
+    <Routes>
+      
+      <Route path='' element={<Home/>}></Route>
+      <Route path='about' element={<About/>}></Route>
+      <Route path='cart' element={<Cart location={location} getLocation={getLocation}/>}></Route>
+      <Route path='contact' element={<Contact/>}></Route>
+      <Route path='product' element={<Product/>}></Route>
+      <Route path='products/:id' element={<SingleProduct/>}></Route>
+
+      
+      
+    </Routes>
+    <Footer/>
+      
+        
+    </BrowserRouter>
+  )
+}
+
+export default App
