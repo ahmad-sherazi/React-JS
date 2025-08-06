@@ -1,6 +1,6 @@
-
-import React, { createContext, useState, useContext } from 'react'
-import { BsSun, BsMoon, BsPalette } from 'react-icons/bs'
+// context/ThemeContext.jsx
+import React, { createContext, useState, useContext } from 'react';
+import { BsSun, BsMoon, BsPalette } from 'react-icons/bs';
 
 const ThemeContext = createContext();
 
@@ -11,6 +11,7 @@ const themes = [
   { name: 'purple', shade: '300', icon: <BsSun size={24} /> },
   { name: 'cyan', shade: '300', icon: <BsSun size={24} /> },
 ];
+
 export const ThemeProvider = ({ children }) => {
   const [themeIndex, setThemeIndex] = useState(0);
   const theme = themes[themeIndex];
@@ -19,11 +20,7 @@ export const ThemeProvider = ({ children }) => {
     setThemeIndex((prevIndex) => (prevIndex + 1) % themes.length);
   };
 
-  return (
-    <ThemeContext.Provider value={{ theme, cycleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, cycleTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => useContext(ThemeContext);

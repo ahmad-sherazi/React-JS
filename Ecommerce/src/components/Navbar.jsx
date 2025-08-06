@@ -10,7 +10,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-reac
 const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
   const { cartItem } = useCart()
 
-  // ✅ State for mobile nav menu toggle
+  // State for mobile nav menu toggle
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const toggleDropdown = () => {
@@ -21,12 +21,12 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
     <div className='bg-black py-1 shadow-2xl '>
       <div className='max-w-6xl mx-auto flex justify-between text-white p-3 items-center'>
 
-        {/* ✅ Mobile menu icon (hamburger) */}
+        {/*  Mobile menu icon (hamburger) */}
         <div className='lg:hidden'>
           <FaBars className='w-6 h-6 cursor-pointer' onClick={() => setMobileMenuOpen(!mobileMenuOpen)} />
         </div>
 
-        {/* ✅ logo + location */}
+        {/* logo + location */}
         <div className='flex items-center'>
           <Link to="">
             <h1 className='font-bold font-serif text-3xl'>
@@ -34,9 +34,9 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
             </h1>
           </Link>
 
-          {/* ✅ Hide location on mobile */}
+          {/*  Hide location on mobile */}
           <div className='hidden md:flex gap-1 items-center pl-5 pt-3 cursor-pointer'>
-            <MapPin className='text-blue-300 w-7 h-12' />
+            {/* <MapPin className='text-blue-300 w-7 h-12' /> */}
             <span>
               {location ? (
                 <div className='-space-y-2'>
@@ -45,10 +45,10 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
                 </div>
               ) : "Add Address"}
             </span>
-            <FaCaretDown onClick={toggleDropdown} />
+            {/* <FaCaretDown onClick={toggleDropdown} /> */}
           </div>
 
-          {/* ✅ Location Dropdown (unchanged) */}
+          {/* Location Dropdown (unchanged) */}
           {openDropdown && (
             <div className='w-[250px] h-max shadow-2xl z-50 bg-black fixed top-16 left-60 border-2 p-5 border-gray-100 rounded-md'>
               <h1 className='font-semibold mb-4 text-xl flex justify-between text-white items-center'>
@@ -61,7 +61,7 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
           )}
         </div>
 
-        {/* ✅ Desktop Menu */}
+        {/*  Desktop Menu */}
         <nav className='hidden lg:block'>
           <ul className="flex text-xl space-x-6 items-center ml-20">
             <li>
@@ -79,7 +79,7 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
           </ul>
         </nav>
 
-        {/* ✅ Cart + Auth */}
+        {/*  Cart + Auth */}
         <div className='flex items-center gap-16 mr-16 '>
           <Link to={"cart"} className='flex'>
             <IoCartOutline className='w-7 h-7 mt-1' />
@@ -97,7 +97,7 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
         </div>
       </div>
 
-      {/* ✅ Mobile Menu Content */}
+      {/*  Mobile Menu Content */}
       {mobileMenuOpen && (
         <div className='lg:hidden bg-black px-6 py-4 text-white space-y-4'>
           <ul className="flex flex-col text-xl space-y-2">

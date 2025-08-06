@@ -51,9 +51,9 @@ function Product() {
       <div className='px-4 max-w-6xl mx-auto mb-10'>
         {
           data?.length > 0 ? (
-            <div className='flex flex-col lg:flex-row gap-12'> {/* 🟩 CHANGED: made layout stack on small screens */}
+            <div className='flex flex-col lg:flex-row gap-12'> {/*  CHANGED: made layout stack on small screens */}
 
-              <div className='w-full lg:w-1/3'> {/* 🟩 CHANGED: make filter full width on mobile */}
+              <div className='w-full lg:w-1/3'> {/*  CHANGED: make filter full width on mobile */}
                 <Filter
                   search={search}
                   setSearch={setSearch}
@@ -68,8 +68,8 @@ function Product() {
                 />
               </div>
 
-              <div className='flex flex-col gap-10 w-full'> {/* 🟩 CHANGED */}
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 mt-10'> {/* 🟩 CHANGED: responsive grid */}
+              <div className='flex flex-col gap-10 w-full'> {/*  CHANGED */}
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 mt-10'> {/*  CHANGED: responsive grid */}
                   {filteredData?.slice(page * 8 - 8, page * 8).map((item, index) => (
                     <div
                       key={index}
@@ -94,7 +94,7 @@ function Product() {
                   ))}
                 </div>
 
-                {/* 🟩 Moved inside for layout consistency */}
+                {/*  Moved inside for layout consistency */}
                 <Pagination pageHandler={pageHandler} page={page} dynamicPage={dynamicPage} />
               </div>
             </div>
