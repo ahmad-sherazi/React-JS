@@ -73,7 +73,7 @@ function About() {
       </div>
       
     </div>
-    <Skill/>
+    {/* <Skill/> */}
     </div>
 
   );
