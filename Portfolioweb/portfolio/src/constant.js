@@ -14,6 +14,10 @@ import gitLogo from './assets/git.png';
 import githubLogo from './assets/github.png';
 //import vscodeLogo from './assets/tech_logo/vscode.png';
 import portfolioprojectpic from './assets/portfolioprojectpic.png';
+import portfolioprojectpic2 from './assets/portfolioprojectpic2.png';
+import ecommercepic from './assets/ecommercepic.png';
+import naatpic from './assets/naatpic.png';
+import passgen from './assets/passgen.png';
 
 
 export const SkillsInfo = [
@@ -61,30 +65,30 @@ export const SkillsInfo = [
 export const projects = [
     {
       id: 0,
-      title: "GitHub Profile Detective",
+      title: "My Portfolio",
       description:
         "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
-      image: portfolioprojectpic,
+      image: portfolioprojectpic2,
       tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
       github: "https://github.com/codingmastr/GitHub-Profile-Search-App-Using-React-JS",
    //   webapp: "https://githubprofiledetective.netlify.app/",
     },
     {
       id: 1,
-      title: "CS Prep",
+      title: "Ecommerece App",
       description:
         "A full-stack quiz-based platform designed for GATE/UGC NET students to practice previous year questions and create customized tests. The platform offers comprehensive profile stats and detailed results, helping students track and improve their preparation journey effectively.",
-      image: portfolioprojectpic,
+      image: ecommercepic,
       tags: ["React JS", "Node.js", "MongoDB", "Express", "HTML", "CSS", "JavaScript"],
       github: "https://github.com/codingmastr/CSPrep",
      // webapp: "https://csprep.netlify.app/",
     },
     {
       id: 2,
-      title: "Movie Recommendation App",
+      title: "Naat App",
       description:
         "A React-based web application that provides movie recommendations based on different criteria, such as genres, user preferences, and popular trends. The intuitive design and smooth experience make it a go-to app for movie enthusiasts.",
-      image: portfolioprojectpic,
+      image: naatpic,
       tags: ["React JS", "API", "HTML", "CSS", "JavaScript"],
       github: "https://github.com/codingmastr/Movie-Recommendation-App",
    //   webapp: "https://movie-recommendation-app-jet.vercel.app/",
@@ -101,10 +105,10 @@ export const projects = [
     },
     {
       id: 4,
-      title: "Task Reminder Chrome Extension Tool",
+      title: "Password Generator",
       description:
         "A productivity-boosting Chrome extension designed to help users manage and remember their daily tasks. Built using JavaScript, it offers a simple interface with reminders and task notifications to keep users on track.",
-      image: portfolioprojectpic,
+      image: passgen,
       tags: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
       github: "https://github.com/codingmastr/Task-Reminder-Tool",
     //  webapp: "chrome://extensions/?id=kngheeibjnnidhfoomkpnbeghackheci",

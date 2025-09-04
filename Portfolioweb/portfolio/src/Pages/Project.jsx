@@ -12,7 +12,7 @@ const Project = () => {
   return (
     <section
      // id="work"
-      className="py-20 px-6 sm:px-10 md:px-12 lg:px-24 xl:px-32 font-sans bg-gray-700"
+      className="py-20 px-6 sm:px-10 md:px-12 lg:px-24 xl:px-32 font-sans bg-gray-800"
     >
       {/* Section Title */}
       <div className="text-center mb-12">
@@ -49,7 +49,7 @@ const Project = () => {
                 {project.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className={`text-sm bg-gray-700 text-${theme.name}-${theme.shade} px-2 py-1 rounded-full`}
+                    className={`text-sm font-semibold bg-gray-700 text-${theme.name}-${theme.shade} px-2 py-1 rounded-full`}
                   >
                     {tag}
                   </span>
@@ -62,13 +62,14 @@ const Project = () => {
 
      {selectedProject && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4">
-    <div className="bg-[#1f1f1f] rounded-xl shadow-2xl w-full max-w-2xl relative overflow-y-auto scrollbar-hide">
+    <div className="bg-[#1f1f1f] rounded-xl shadow-2xl w-full max-w-2xl relative max-h-[90vh] overflow-y-auto scrollbar-hide sm:overflow-visible sm:max-h-none">
+
       {/* 👆 Added `scrollbar-hide` to hide scrollbar but keep scrollability */}
 
       {/* Close button */}
       <button
         onClick={handleCloseModal}
-        className={`absolute right-1 text-white text-2xl hover:text-${theme.name}-300 hover:font-extrabold hover:scale-125`}
+        className={`absolute right-1 text-white text-2xl hover:text-${theme.name}-300 hover:font-extrabold hover:scale-100`}
       >
         &times;
       </button>
@@ -86,7 +87,7 @@ const Project = () => {
           {selectedProject.tags.map((tag, index) => (
             <span
               key={index}
-              className={`bg-gray-700 text-${theme.name}-300 text-xl px-2 py-1 rounded-full`}
+              className={`bg-gray-700 text-${theme.name}-300 text-md font-bold px-2 py-1 rounded-full`}
             >
               {tag}
             </span>
@@ -106,7 +107,7 @@ const Project = () => {
             href={selectedProject.github}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex-1 text-center bg-gray-700 hover:scale-110 border-2 border-${theme.name}-${theme.shade} text-${theme.name}-300 py-2 rounded-lg text-sm font-semibold`}
+            className={`flex-1 text-center bg-gray-700 hover:scale-105 border-2 border-${theme.name}-${theme.shade} text-${theme.name}-300 py-2 rounded-lg text-sm font-semibold`}
           >
             View Live
           </a>

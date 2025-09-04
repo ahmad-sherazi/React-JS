@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="flex items-center z-20">
           <a href="#about" onClick={closeMenu}>
             <h1 className="font-bold font-serif text-3xl">
-              <span className={`text-6xl font-bold text-${theme.name}-${theme.shade}`}>P</span>ortfolio
+              <span className={`text-6xl font-bold text-${theme.name}-300`}>P</span>ortfolio
             </h1>
           </a>
         </div>
@@ -41,7 +41,7 @@ const Navbar = () => {
                   className={`transition duration-300 px-4 py-2 rounded
                     ${
                       active === id
-                        ? `text-${theme.name}-${theme.shade} `
+                        ? `text-${theme.name}-300 `
                         : 'hover:text-black hover:bg-white'
                     }
                   `}
@@ -52,11 +52,11 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="flex items-center pl-40 gap-3">
-            <a href="https://github.com/ahmad-sherazi" target="_blank" rel="noopener noreferrer">
+          <div className="flex items-center pl-40 gap-3 ">
+            <a className={`hover:text-${theme.name}-300`} href="https://github.com/ahmad-sherazi" target="_blank" rel="noopener noreferrer">
               <FaGithub size={32} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a className={`hover:text-${theme.name}-300`} href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <FaLinkedin size={32} />
             </a>
           </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
         {/* Mobile Hamburger */}
         <div className="md:hidden z-30">
           <button onClick={toggleMenu} aria-label="Toggle menu" className="text-white focus:outline-none">
-            {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+            {menuOpen ? <HiX size={28}  /> : <HiMenu size={28} />}
           </button>
         </div>
 

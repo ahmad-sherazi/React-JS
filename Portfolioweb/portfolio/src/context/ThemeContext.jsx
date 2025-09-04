@@ -11,6 +11,7 @@ const themes = [
   { name: 'purple', shade: '300', icon: <BsSun size={24} /> },
   { name: 'cyan', shade: '300', icon: <BsSun size={24} /> },
   { name: 'desert', shade: '300', icon: <BsPalette size={24} /> }, // Desert theme
+   { name: 'red', shade: '300', icon: <BsSun size={24} /> },
 ];
 
 export const ThemeProvider = ({ children }) => {

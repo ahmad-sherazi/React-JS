@@ -21,6 +21,7 @@ module.exports = {
     'text-purple-300',
     'text-cyan-300',
     'text-desert-300',
+    'text-red-300',
 
     'hover:text-blue-300',
     'hover:text-green-300',
@@ -28,6 +29,7 @@ module.exports = {
     'hover:text-purple-300',
     'hover:text-cyan-300',
     'hover:text-desert-300',
+    'hover:text-red-300',
 
     'hover:bg-blue-300',
     'hover:bg-green-300',
@@ -35,6 +37,7 @@ module.exports = {
     'hover:bg-purple-300',
     'hover:bg-cyan-300',
     'hover:bg-desert-300',
+    'hover:bg-red-300',
 
     'hover:shadow-blue-500/60',
     'hover:shadow-green-500/60',
@@ -42,6 +45,7 @@ module.exports = {
     'hover:shadow-purple-500/60',
     'hover:shadow-cyan-500/60',
     'hover:shadow-desert-500/60',
+    'hover:shadow-red-500/60',
 
     'from-blue-300',
     'from-green-300',
@@ -49,6 +53,7 @@ module.exports = {
     'from-purple-300',
     'from-cyan-300',
     'from-desert-300',
+    'from-red-300',
 
     'border-blue-300',
     'border-green-300',
@@ -56,6 +61,16 @@ module.exports = {
     'border-purple-300',
     'border-cyan-300',
     'border-desert-300',
+    'border-red-300',
+
+    'focus:border-blue-300',
+    'focus:border-green-300',
+    'focus:border-orange-300',
+    'focus:border-purple-300',
+    'focus:border-cyan-300',
+    'focus:border-desert-300',
+    'focus:border-red-300',
+
 
     'bg-blue-300',
     'bg-green-300',
@@ -63,12 +78,14 @@ module.exports = {
     'bg-purple-300',
     'bg-cyan-300',
     'bg-desert-300',
+    'bg-red-300',
     'bg-blue-700',
     'bg-green-700',
     'bg-orange-700',
     'bg-purple-700',
     'bg-cyan-700',
     'bg-desert-700',
+    'bg-red-700',
   ],
   plugins: [require('tailwind-scrollbar-hide')],
 };
