@@ -13,26 +13,20 @@ const CategoryProduct = () => {
   const getFilterData = async () => {
     const fixedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()
     const setData = fixedCategory.toLowerCase()
-    console.log(setData);
-    
-     // 🟢 FIX: normalize category
 
     try {
       const res = await axios.get(`https://fakestoreapi.in/api/products/category?type=${setData}`)
-     
-      console.log("Category API Response:", res.data) // 🟢 DEBUG
       const data = res.data.products
-      setSearchData(data || []) // 🟢 FIX: handle undefined case
+      setSearchData(data || [])
     } catch (error) {
       console.log("Error fetching category data:", error)
     }
   }
 
   useEffect(() => {
-    console.log("Selected category:", category) // 🟢 DEBUG
     getFilterData()
     window.scrollTo(0, 0)
-  }, [category]) // 🟢 FIX: added dependency
+  }, [category])
 
   return (
     <div>
@@ -40,17 +34,20 @@ const CategoryProduct = () => {
         <div className='max-w-6xl mx-auto mt-10 mb-10 px-4'>
           <button
             onClick={() => navigate('/')}
-            className='bg-gray-800 mb-5 text-white px-3 py-1 rounded-md cursor-pointer flex gap-1 items-center'>
+            className='bg-gray-800 mb-5 text-white hover:scale-105 px-3 py-1 rounded-md cursor-pointer flex gap-1 items-center'>
             <ChevronLeft /> Back
           </button>
 
-          {searchData.map((product, index) => (
-            <ProductListView key={index} product={product} />
-          ))}
+          {/* ✅ Responsive grid wrapper */}
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
+            {searchData.map((product, index) => (
+              <ProductListView key={index} product={product} />
+            ))}
+          </div>
         </div>
       ) : (
         <div className='flex items-center justify-center h-[400px] text-lg font-semibold'>
-          No items found for category <span className="ml-1 text-red-500">{category}</span> {/* 🟢 UX improvement */}
+          No items found for category <span className="ml-1 text-red-500">{category}</span>
         </div>
       )}
     </div>

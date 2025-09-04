@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTheme } from '../Context/ThemeContext'
+
 import { Truck, Lock, RotateCcw, Clock } from 'lucide-react'
 
 const features = [
@@ -9,8 +11,11 @@ const features = [
 ]
 
 const Features = () => {
+
+  const { theme, toggleTheme } = useTheme() 
+
   return (
-    <div className='bg-gray-200 py-3 px-4 mb-12 sm:px-6 lg:px-8'>
+    <div className={` ${theme === "dark" ? "bg-black" : "bg-gray-200 text-black"} py-3 px-4 mb-12 sm:px-6 lg:px-8`}>
       <div className='max-w-7xl mx-auto'>
         
         <div className='grid grid-cols-1 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8'>
@@ -22,12 +27,12 @@ const Features = () => {
                 // 🟩 CHANGED: make layout vertical on mobile, horizontal on sm+
                 className='flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left'
               >
-                <feature.icon className='flex-shrink-0 h-10 w-10 text-gray-600' aria-hidden="true" />
-                
+                <feature.icon className={`flex-shrink-0 h-10 w-10 ${theme === "dark" ? "text-white" : "text-gray-600"} `} aria-hidden="true" />
+
                 {/* 🟩 CHANGED: remove left margin on mobile */}
                 <div className='mt-3 sm:mt-0 ml-0 sm:ml-4'>
-                  <p className='text-base font-medium text-gray-900'>{feature.text}</p>
-                  <p className='mt-1 text-sm text-gray-500'>{feature.subtext}</p>
+                  <p className={`text-base font-medium ${theme === "dark" ? "text-white" : " text-gray-900"}`}>{feature.text}</p>
+                  <p className={`mt-1 text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>{feature.subtext}</p>
                 </div>
               </div>
             )

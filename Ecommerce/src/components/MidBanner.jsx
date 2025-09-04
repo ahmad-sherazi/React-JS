@@ -1,11 +1,13 @@
 import React from 'react'
+import { useTheme } from '../Context/ThemeContext' 
 import { useNavigate } from 'react-router-dom'
 
 const MidBanner = () => {
   const navigate = useNavigate()
+  const { theme, toggleTheme } = useTheme() 
+
   return (
-    <div className='bg-gray-100 md:py-24'>
-      
+    <div className={` md:py-24  ${theme === "dark" ? " text-white" : "bg-gray-100"}`}>
       {/* 🟩 CHANGED: Made width full on small screens */}
       <div className='relative w-full max-w-7xl mx-auto md:rounded-2xl pt-20 sm:pt-24 bg-cover bg-center h-[400px] sm:h-[450px] md:h-[500px]'
         style={{

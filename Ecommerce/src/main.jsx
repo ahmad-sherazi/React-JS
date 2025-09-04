@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import { DataProvider } from './Context/DataContext.jsx'
 import { CartProvider } from './Context/CartContext.jsx'
+import { ThemeProvider } from './Context/ThemeContext.jsx'
 import { ToastContainer } from 'react-toastify'
 
 // Import your Publishable Key
@@ -16,6 +17,7 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+  <ThemeProvider>
     <DataProvider>
       <CartProvider>
         <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
@@ -52,5 +54,6 @@ createRoot(document.getElementById('root')).render(
         </ClerkProvider>
       </CartProvider>
     </DataProvider>
+  </ThemeProvider>
   </StrictMode>,
 )

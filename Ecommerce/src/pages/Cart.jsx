@@ -33,11 +33,22 @@ const Cart = ({ location, getLocation }) => {
                       <p className='text-red-500 font-semibold text-lg'>${item.price}</p>
                     </div>
                   </div>
-                  <div className='bg-gradient-to-r from-gray-900 to-blue-300 text-white flex gap-4 p-2 rounded-md font-bold text-2xl '>
-                    <button onClick={() => updateQuantity(cartItem, item.id, "decrease")} className='cursor-pointer'>-</button>
-                    <span>{item.quantity}</span>
-                    <button onClick={() => updateQuantity(cartItem, item.id, "increase")} className='cursor-pointer'>+</button>
-                  </div>
+                 <div className='bg-gradient-to-r from-gray-900 to-blue-300 text-white flex gap-2 sm:gap-4 px-3 py-1 sm:p-2 rounded-md font-bold text-base sm:text-2xl'>
+  <button
+    onClick={() => updateQuantity(cartItem, item.id, "decrease")}
+    className='cursor-pointer'
+  >
+    -
+  </button>
+  <span>{item.quantity}</span>
+  <button
+    onClick={() => updateQuantity(cartItem, item.id, "increase")}
+    className='cursor-pointer'
+  >
+    +
+  </button>
+</div>
+
                   <span className='hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl'>
                     <FaRegTrashAlt onClick={() => deleteItem(item.id)} className=' text-2xl cursor-pointer hover:text-red-600 ' />
                   </span>
